@@ -19,7 +19,17 @@ xui.Class('App', 'xui.Module',{
         iniComponents : function(){
             // [[Code created by CrossUI RAD Studio
             var host=this, children=[], append=function(child){children.push(child.get(0));};
-
+            
+            append(
+                xui.create("xui.UI.Button")
+                .setHost(host,"xui_ui_button9")
+                .setLeft("7.619047619047619em")
+                .setTop("6.857142857142857em")
+                .setWidth("6.780952380952381em")
+                .setCaption("Button")
+                .onClick("_xui_ui_button9_onclick")
+            );
+            
             return children;
             // ]]Code created by CrossUI RAD Studio
         },
@@ -28,6 +38,18 @@ xui.Class('App', 'xui.Module',{
         customAppend : function(parent, subId, left, top){
             // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
+        },
+        /**
+         * Fired when user click it
+         * @method onClick [xui.UI.Button event]
+         * @param {xui.UIProfile.} profile  The current control's profile object
+         * @param {Event} e , Dom event object
+         * @param {Element.xui} src  id or Dom Element
+         * @param {} value  Object
+        */
+        _xui_ui_button9_onclick:function(profile, e, src, value){
+            var ns = this, uictrl = profile.boxing();
+            xui.unserialize('new xui.UI.Button()');
         }
         /*,
         // To determine how properties affects this module
